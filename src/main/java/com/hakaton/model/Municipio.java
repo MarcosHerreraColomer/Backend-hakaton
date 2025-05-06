@@ -7,18 +7,22 @@ import jakarta.persistence.Table;
 @Entity
 @Table(name = "municipios")
 public class Municipio {
+
     @Id
-    private String id;
+    private Integer id; // ID del municipio (int)
 
     private String nombre;
-    private String comunidad;
+    private String provincia;
+    private String comunidad_autonoma;
+    private Integer comunidad_id;
 
     // Getters y setters
-    public String getId() {
+
+    public Integer getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -30,11 +34,27 @@ public class Municipio {
         this.nombre = nombre;
     }
 
-    public String getComunidad() {
-        return comunidad;
+    public String getProvincia() {
+        return provincia;
     }
 
-    public void setComunidad(String comunidad) {
-        this.comunidad = comunidad;
+    public void setProvincia(String provincia) {
+        this.provincia = provincia;
+    }
+
+    public String getComunidad_autonoma() {
+        return comunidad_autonoma;
+    }
+
+    public void setComunidad_autonoma(String comunidad_autonoma) {
+        this.comunidad_autonoma = comunidad_autonoma;
+    }
+
+    public Integer getComunidad_id() {
+        return comunidad_id;
+    }
+
+    public void setComunidad_id(Integer comunidad_id) {
+        this.comunidad_id = comunidad_id;
     }
 }

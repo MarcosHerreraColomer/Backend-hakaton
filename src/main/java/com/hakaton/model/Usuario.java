@@ -1,91 +1,127 @@
 package com.hakaton.model;
+import jakarta.persistence.Entity;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
+import jakarta.persistence.Table;
 
-import jakarta.persistence.*;
+
+
 
 @Entity
+@Table(name = "usuarios")
+
 public class Usuario {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private String dni;
+
     private String nombre;
+    private String email;
+    private String password;
+
     private String cp;
-    private String contrasena;
-    private String rol = "votante"; // Por defecto
+
+    private String rol = "votante"; // Valor por defecto
 
     @ManyToOne
     @JoinColumn(name = "municipio_id")
     private Municipio municipio;
 
-    @Transient // Este campo se usa solo para recibir el ID desde Angular
-    private Long municipio_id;
+    @Transient
+    private Integer municipio_id;
 
-    public Usuario() {}
-
-    // Getters y setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
+    private Boolean ha_votado_municipal = false;
+    private Boolean ha_votado_autonomica = false;
+    private Boolean ha_votado_nacional = false;
 
     public String getDni() {
-        return dni;
-    }
+    return dni;
+}
 
-    public void setDni(String dni) {
-        this.dni = dni;
-    }
+public void setDni(String dni) {
+    this.dni = dni;
+}
 
-    public String getNombre() {
-        return nombre;
-    }
+public String getNombre() {
+    return nombre;
+}
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
+public void setNombre(String nombre) {
+    this.nombre = nombre;
+}
 
-    public String getCp() {
-        return cp;
-    }
+public String getEmail() {
+    return email;
+}
 
-    public void setCp(String cp) {
-        this.cp = cp;
-    }
+public void setEmail(String email) {
+    this.email = email;
+}
 
-    public String getContrasena() {
-        return contrasena;
-    }
+public String getPassword() {
+    return password;
+}
 
-    public void setContrasena(String contrasena) {
-        this.contrasena = contrasena;
-    }
+public void setPassword(String password) {
+    this.password = password;
+}
 
-    public String getRol() {
-        return rol;
-    }
+public String getCp() {
+    return cp;
+}
 
-    public void setRol(String rol) {
-        this.rol = rol;
-    }
+public void setCp(String cp) {
+    this.cp = cp;
+}
 
-    public Municipio getMunicipio() {
-        return municipio;
-    }
+public String getRol() {
+    return rol;
+}
 
-    public void setMunicipio(Municipio municipio) {
-        this.municipio = municipio;
-    }
+public void setRol(String rol) {
+    this.rol = rol;
+}
 
-    public Long getMunicipio_id() {
-        return municipio_id;
-    }
+public Municipio getMunicipio() {
+    return municipio;
+}
 
-    public void setMunicipio_id(Long municipio_id) {
-        this.municipio_id = municipio_id;
-    }
+public void setMunicipio(Municipio municipio) {
+    this.municipio = municipio;
+}
+
+public Integer getMunicipio_id() {
+    return municipio_id;
+}
+
+public void setMunicipio_id(Integer municipio_id) {
+    this.municipio_id = municipio_id;
+}
+
+public Boolean getHa_votado_municipal() {
+    return ha_votado_municipal;
+}
+
+public void setHa_votado_municipal(Boolean ha_votado_municipal) {
+    this.ha_votado_municipal = ha_votado_municipal;
+}
+
+public Boolean getHa_votado_autonomica() {
+    return ha_votado_autonomica;
+}
+
+public void setHa_votado_autonomica(Boolean ha_votado_autonomica) {
+    this.ha_votado_autonomica = ha_votado_autonomica;
+}
+
+public Boolean getHa_votado_nacional() {
+    return ha_votado_nacional;
+}
+
+public void setHa_votado_nacional(Boolean ha_votado_nacional) {
+    this.ha_votado_nacional = ha_votado_nacional;
+}
+
 }
