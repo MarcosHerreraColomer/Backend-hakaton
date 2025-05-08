@@ -1,4 +1,5 @@
 C:\Users\PC\hakaton\src\main\java\com\hakaton\repository\VotoRepository.java
+C:\Users\PC\hakaton\src\main\java\com\hakaton\repository\EleccionRepository.java
 C:\Users\PC\hakaton\src\main\java\com\hakaton\security\JwtUtil.java
 C:\Users\PC\hakaton\src\main\java\com\hakaton\model\Usuario.java
 C:\Users\PC\hakaton\src\main\java\com\hakaton\Service\PasswordGenerator.java
@@ -8,7 +9,9 @@ C:\Users\PC\hakaton\src\main\java\com\hakaton\controller\PartidoController.java
 C:\Users\PC\hakaton\src\main\java\com\hakaton\controller\MunicipioController.java
 C:\Users\PC\hakaton\src\main\java\com\hakaton\controller\UsuarioController.java
 C:\Users\PC\hakaton\src\main\java\com\hakaton\config\SecurityConfig.java
+C:\Users\PC\hakaton\src\main\java\com\hakaton\controller\EleccionController.java
 C:\Users\PC\hakaton\src\main\java\com\hakaton\controller\HomeController.java
+C:\Users\PC\hakaton\src\main\java\com\hakaton\model\Eleccion.java
 C:\Users\PC\hakaton\src\main\java\com\hakaton\model\Partido.java
 C:\Users\PC\hakaton\src\main\java\com\hakaton\model\Municipio.java
 C:\Users\PC\hakaton\src\main\java\com\hakaton\model\Voto.java

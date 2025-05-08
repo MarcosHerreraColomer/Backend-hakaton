@@ -3,6 +3,8 @@ package com.hakaton.security;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
 import io.jsonwebtoken.security.Keys;
+import jakarta.servlet.http.HttpServletRequest;
+
 import org.springframework.stereotype.Component;
 
 import java.security.Key;
@@ -47,8 +49,22 @@ public class JwtUtil {
                 .getSubject();
     }
 
-    // ✅ Alias por si quieres seguir la convención Spring
+    // ✅ Alias para mantener compatibilidad con tu VotoController
+    public String extraerDniDesdeToken(String token) {
+        return getDniFromToken(token);
+    }
+
+    // Alias clásico Spring Security (por si algún día usas UserDetails)
     public String extractUsername(String token) {
         return getDniFromToken(token);
     }
+    // 🔐 Extraer el token desde el header Authorization
+public String getTokenFromRequest(HttpServletRequest request) {
+    String authHeader = request.getHeader("Authorization");
+    if (authHeader != null && authHeader.startsWith("Bearer ")) {
+        return authHeader.substring(7); // Quitar "Bearer "
+    }
+    return null;
+}
+
 }

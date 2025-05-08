@@ -9,12 +9,12 @@ import java.util.List;
 @Repository
 public interface PartidoRepository extends JpaRepository<Partido, Integer> {
 
-    // Obtener partidos municipales por ID de municipio
+    // Municipales por ID de municipio
     List<Partido> findByAmbitoAndCodigoAmbito(String ambito, String codigoAmbito);
 
-    // Obtener partidos autonómicos por ID de comunidad
+    // Autonómicos por ID de comunidad (ordenados opcionalmente)
     List<Partido> findByAmbitoAndCodigoAmbitoOrderByNombreAsc(String ambito, String codigoAmbito);
 
-    // Obtener partidos nacionales (sin códigoAmbito)
+    // Nacionales
     List<Partido> findByAmbito(String ambito);
 }
