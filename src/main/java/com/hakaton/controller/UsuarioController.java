@@ -60,8 +60,12 @@ public class UsuarioController {
         Usuario guardado = usuarioRepository.save(usuario);
 
         try {
-            emailService.enviarCredenciales(usuario.getEmail(), contrasena);
-            System.out.println("📧 Correo enviado a " + usuario.getEmail());
+            
+   // Enviar correo con las credenciales al email del usuario
+        emailService.enviarCredenciales(usuario.getEmail(), usuario.getDni(), contrasena);
+
+        guardado.setPassword(contrasena); // para mostrarla sin encriptar si se desea
+        return guardado;
         } catch (Exception e) {
             System.out.println("⚠️ Error al enviar correo: " + e.getMessage());
         }
